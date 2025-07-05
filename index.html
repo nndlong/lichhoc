@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lên Lịch Học</title>
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- Google Font & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>📚 Menu</h2>
+      <ul>
+        <li onclick="showSection('basic')"><i class="fas fa-calendar-alt"></i> Lịch học cơ bản</li>
+        <li onclick="showSection('advanced')"><i class="fas fa-book"></i> Lịch học nâng cao</li>
+        <li onclick="showSection('teacher')"><i class="fas fa-chalkboard-teacher"></i> Thông tin giảng viên</li>
+        <li onclick="showSection('student')"><i class="fas fa-user-graduate"></i> Thông tin học viên</li>
+      </ul>
+    </aside>
+    
+    <main class="main-content">
+      <!-- Lịch học cơ bản -->
+      <section id="basic" class="content-section">
+        <h2><i class="fas fa-calendar-alt"></i> Lịch học cơ bản</h2>
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Ngày</th>
+              <th>Môn học</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Thứ 2 (07/07/2025)</td><td>Front-Ends</td></tr>
+            <tr><td>Thứ 3 (08/07/2025)</td><td>Back-Ends</td></tr>
+            <tr><td>Thứ 4 (09/07/2025)</td><td>Front-Ends</td></tr>
+            <tr><td>Thứ 5 (10/07/2025)</td><td>Back-Ends</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Lịch học nâng cao -->
+      <section id="advanced" class="content-section" style="display: none;">
+        <h2><i class="fas fa-book"></i> Lịch học nâng cao</h2>
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Ngày</th>
+              <th>Môn học</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Thứ 6 (11/07/2025)</td><td>Front-Ends</td></tr>
+            <tr><td>Thứ 7 (12/07/2025)</td><td>Back-Ends</td></tr>
+            <tr><td>Chủ Nhật (13/07/2025)</td><td>Front-Ends</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Thông tin giảng viên -->
+      <section id="teacher" class="content-section" style="display: none;">
+        <h2><i class="fas fa-chalkboard-teacher"></i> Thông tin giảng viên</h2>
+        <p><strong><i class="fas fa-user"></i> Họ tên:</strong> Nguyễn Ngọc Duy Long</p>
+        <p><strong><i class="fas fa-users-class"></i> Lớp:</strong> SD1901</p>
+        <p><strong><i class="fas fa-star"></i> Chức vụ:</strong> Lớp trưởng</p>
+        <p><strong><i class="fas fa-trophy"></i> Thành tích:</strong></p>
+        <ul>
+          <li><i class="fas fa-award"></i> Top 100 Học viên xuất sắc của FPT Polyschool</li>
+          <li><i class="fas fa-medal"></i> Top 15 Học viên có hoạt động phong trào xuất sắc</li>
+          <li><i class="fas fa-certificate"></i> Xếp loại: Xuất Sắc</li>
+          <li><i class="fas fa-graduation-cap"></i> Học lực: Giỏi</li>
+          <li><i class="fas fa-chart-line"></i> GPA: 3.66 / 4.00</li>
+        </ul>
+      </section>
+
+      <!-- Thông tin học viên -->
+      <section id="student" class="content-section" style="display: none;">
+        <h2><i class="fas fa-user-graduate"></i> Thông tin học viên</h2>
+        <p>Chưa có dữ liệu...</p>
+      </section>
+    </main>
+  </div>
+
+  <!-- Chatbot -->
+  <div class="chatbot-container">
+    <div id="chatbox">
+      <div id="chatlog"></div>
+      <input type="text" id="userInput" placeholder="Nhập câu hỏi..." onkeydown="if(event.key==='Enter') sendMessage()"/>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
